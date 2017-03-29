@@ -19,20 +19,19 @@ public class A5Q1 {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
         //get player 1 or 2
-        int player = 1;
+        //int player = 1;
         while (true) {
-        
             //get word from user
             System.out.println("Welcome to Hangman!");
             System.out.println("Player 1 enter in your word. If you want to quit,click enter.");
-            
-            System.out.printf("Player %s, Enter in a word for player %s to guess.", player);
+
+            //System.out.printf("Player %s, Enter in a word for player %s to guess.", player);
             String word = input.nextLine();
             //quit if you enter 
-            if(word.isEmpty()){
-               System.out.println("Bye! Thank you for playing");
-               break;
-               //System.exit(0);
+            if (word.isEmpty()) {
+                System.out.println("Bye! Thank you for playing");
+                break;
+                //System.exit(0);
             }
             String word1 = word;
             int lives = 5;
@@ -76,10 +75,10 @@ public class A5Q1 {
             while (!(word1.equals(word))) {
                 System.out.println("Please enter a letter");
                 String letter = input.nextLine();
-                if(letter.isEmpty()){
+                if (letter.isEmpty()) {
                     System.out.println("Bye! Thank you for playing");
                     System.exit(0);
-                    
+
                 }
                 boolean mistake = true;
                 for (int i = 0; i < word.length(); i++) {
@@ -87,7 +86,7 @@ public class A5Q1 {
                         mistake = false;
                         word = word.substring(0, i) + letter + word.substring(i + 1, word.length());
                         System.out.println(word);
-
+                        
                     }
                 }
                 if (mistake == true) {
@@ -100,12 +99,13 @@ public class A5Q1 {
                     }
                 }
             }
-            if (!(lives == 0) && word1 == word) {
-                System.out.println("You Win!!!");
+            if (!(lives == 0 && word1 == word)) {
+                System.out.println("You Win!Congratulations");
+
 
 
             }
-          
+
         }
     }
 }
