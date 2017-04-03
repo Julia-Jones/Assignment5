@@ -66,17 +66,21 @@ public class Hangman {
             word = word.replace("x", "-");
             word = word.replace("y", "-");
             word = word.replace("x", "-");
-
+            
+            //writes out words with blanks instead of letters
             System.out.println(word);
 
+            //statement to enter letter and variable 
             while (!(word1.equals(word))) {
                 System.out.println("Please enter a letter");
                 String letter = input.nextLine();
+                // if the space is empty then it ends the program and says
                 if (letter.isEmpty()) {
                     System.out.println("Bye! Thank you for playing");
                     System.exit(0);
 
                 }
+                //if the letter is guessed then it replaces it in the blank 
                 boolean mistake = true;
                 for (int i = 0; i < word.length(); i++) {
                     if (word1.charAt(i) == letter.charAt(0)) {
@@ -84,9 +88,11 @@ public class Hangman {
                         word = word.substring(0, i) + letter + word.substring(i + 1, word.length());
                     }
                 }
+                //if there is a mistake it subtracts one life from the total amount of lives
                 System.out.println(word);
                 if (mistake == true) {
                     lives--;
+                    //spits out the statement that says the amount of lives left or the you have lost
                     System.out.println("You got it wrong and you have " + lives + " lives left.");
                     if (lives == 0) {
                         System.out.println("You have lost.");
@@ -97,6 +103,7 @@ public class Hangman {
                     }
                 }
             }
+            //if the original word matches the word guessed then they win and it says that they win 
             if (!(lives == 0 && word1 == word)) {
                 System.out.println("You Win!Congratulations");
 
