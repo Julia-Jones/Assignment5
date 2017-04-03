@@ -90,6 +90,7 @@ public class Hangman {
                     System.out.println("You got it wrong and you have " + lives + " lives left.");
                     if (lives == 0) {
                         System.out.println("You have lost.");
+                        System.out.println("The word was " + word1 + ".");
                         System.exit(0);
                         break;
 
