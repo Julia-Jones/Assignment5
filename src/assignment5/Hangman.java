@@ -38,6 +38,8 @@ public class Hangman {
 
             //making the word vanish 
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            
+            
 
             //replacing letters with "_" 
             word = word.replace("a", "-");
